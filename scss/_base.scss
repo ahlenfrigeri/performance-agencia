@@ -1,0 +1,45 @@
+// =====================================================================
+// _base.scss: reset e estilos gerais
+// =====================================================================
+@use "variaveis" as *;
+@use "mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include a-partir-de($bp-grande) {
+    font-size: 112.5%; // 18px: tudo em rem cresce junto
+  }
+}
+
+body {
+  font-family: $fonte-principal;
+  font-size: $tamanho-base;
+  line-height: 1.6;
+  color: $cor-texto;
+  background: $cor-fundo;
+}
+
+a {
+  color: $cor-primaria;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,10 @@
+// =====================================================================
+// estilos.scss: arquivo principal
+// Só junta os partials. Ele é compilado para css/estilos.css:
+//   npm run sass         (compila uma vez)
+//   npm run sass:watch   (recompila a cada alteração)
+// _variaveis e _mixins não geram CSS sozinhos: são usados pelos outros partials.
+// =====================================================================
+@use "base";
+@use "layout";
+@use "componentes";

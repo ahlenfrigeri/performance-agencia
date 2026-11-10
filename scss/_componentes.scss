@@ -1,0 +1,178 @@
+// =====================================================================
+// _componentes.scss: peças reutilizáveis e blocos de conteúdo
+// =====================================================================
+@use "variaveis" as *;
+@use "mixins" as *;
+
+// --- Botão ---
+.botao {
+  @include botao;
+
+  &--contorno {
+    background: transparent;
+    color: $cor-primaria;
+
+    &:hover {
+      color: $cor-branca;
+    }
+  }
+}
+
+// --- Imagem ---
+.imagem {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: $raio;
+}
+
+// --- Cartão de serviço ---
+.cartao {
+  @include caixa($cor-branca, $espacamento * 2);
+  padding-inline: $espacamento * 1.5;
+  box-shadow: $sombra-cartao;
+  transition: transform $transicao;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__icone {
+    display: block;
+    font-size: 2.2rem;
+    margin-bottom: $espacamento * 0.75;
+  }
+
+  &__titulo {
+    margin-bottom: calc($espacamento / 2); // operador: metade do espaçamento
+  }
+
+  &__texto {
+    color: $cor-texto-suave;
+    font-size: 0.95rem;
+  }
+}
+
+// --- Avatar ---
+$tamanho-avatar: 2.75rem;
+
+.avatar {
+  width: $tamanho-avatar;
+  height: $tamanho-avatar;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: $cor-primaria;
+  color: $cor-branca;
+  font-weight: 700;
+}
+
+// --- Sobre ---
+.sobre__texto {
+  margin-bottom: $espacamento;
+  color: $cor-texto-suave;
+}
+
+.valores {
+  list-style: none;
+  margin: $espacamento 0 ($espacamento * 2);
+
+  &__item {
+    position: relative;
+    padding-left: $espacamento * 1.5;
+    margin-bottom: $espacamento * 0.4;
+
+    &::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: $cor-primaria;
+    }
+  }
+}
+
+.numeros {
+  @include flex(row, stretch, flex-start, $espacamento);
+  flex-wrap: wrap;
+
+  &__item {
+    @include caixa($cor-fundo-alt, $espacamento);
+    flex: 1 1 6rem;
+    text-align: center;
+  }
+
+  &__valor {
+    display: block;
+    font-size: 1.6rem;
+    color: $cor-primaria;
+  }
+
+  &__rotulo {
+    font-size: 0.85rem;
+    color: $cor-texto-suave;
+  }
+}
+
+// --- Depoimento ---
+.depoimento {
+  @include flex(column, stretch, space-between, $espacamento);
+  padding: $espacamento * 1.5;
+  border: 1px solid $cor-borda;
+  border-radius: $raio;
+  text-align: left;
+
+  &__texto {
+    font-style: italic;
+  }
+
+  &__autor {
+    @include flex(row, center, flex-start, $espacamento * 0.75);
+  }
+
+  &__nome {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: $cor-texto-suave;
+  }
+}
+
+// --- Contato ---
+.contato {
+  margin-top: $espacamento;
+  font-style: normal;
+
+  &__linha {
+    margin-bottom: calc($espacamento / 2);
+    overflow-wrap: anywhere;
+  }
+}
+
+// --- Formulário ---
+.formulario {
+  @include flex(column, stretch, flex-start, $espacamento * 0.4);
+  @include caixa;
+
+  &__rotulo {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__campo {
+    width: 100%;
+    margin-bottom: $espacamento * 0.75;
+    padding: 0.75em;
+    border: 2px solid $cor-borda-campo;
+    border-radius: calc($raio * 2 / 3);
+    font: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+    }
+  }
+
+  &__botao {
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "agencia-criativa-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agência Criativa Web com SASS modular (exercício do módulo 13 - EBAC)",
+  "scripts": {
+    "sass": "sass scss/estilos.scss css/estilos.css --no-source-map",
+    "sass:watch": "sass --watch scss/estilos.scss css/estilos.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "1.106.1"
+  }
+}

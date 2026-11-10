@@ -1,0 +1,37 @@
+// =====================================================================
+// _variaveis.scss: cores, espaçamentos, fontes e breakpoints
+// Mudou a identidade visual? Muda aqui e o site inteiro acompanha.
+// =====================================================================
+
+// Cores
+$cor-primaria: #6c2bd9;
+$cor-primaria-escura: #4c1d9f;
+$cor-destaque: #ff7a59;
+$cor-texto: #1f1d2b;
+$cor-texto-suave: #5f5b73;
+$cor-fundo: #ffffff;
+$cor-fundo-alt: #f5f2fd;
+$cor-borda: #e7e3f3;
+$cor-borda-campo: #e2ddf0;
+$cor-branca: #ffffff;
+
+// Tipografia
+$fonte-principal: "Poppins", Arial, sans-serif;
+$tamanho-base: 1rem;
+
+// Espaçamentos (a base é $espacamento; os outros saem dela com operadores)
+$espacamento: 1rem;
+$espacamento-secao: $espacamento * 4; // 4rem
+$raio: 0.75rem;
+
+// Sombras
+$sombra-cartao: 0 4px 16px rgba($cor-primaria, 0.08);
+$sombra-cabecalho: 0 2px 12px rgba($cor-texto, 0.08);
+
+// Breakpoints (mobile first)
+$bp-tablet: 40em;  // 640px
+$bp-desktop: 56em; // 896px
+$bp-grande: 90em;  // 1440px
+
+// Movimento
+$transicao: 0.2s;

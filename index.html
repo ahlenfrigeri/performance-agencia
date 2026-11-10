@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agência Criativa Web: design digital, sites e identidade visual.">
+  <title>Agência Criativa Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- Os ids das seções ficam só para os links do menu (#sobre etc.); o CSS usa apenas classes BEM -->
+  <header class="cabecalho">
+    <div class="container cabecalho__conteudo">
+      <a href="#home" class="logo">Criativa<span class="logo__destaque">Web</span></a>
+
+      <input type="checkbox" id="menu-toggle" class="menu__toggle" aria-label="Abrir menu">
+      <label for="menu-toggle" class="menu__icone" aria-hidden="true"><span class="menu__icone-linha"></span></label>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
+          <li class="menu__item"><a href="#sobre" class="menu__link">Sobre Nós</a></li>
+          <li class="menu__item"><a href="#servicos" class="menu__link">Serviços</a></li>
+          <li class="menu__item"><a href="#depoimentos" class="menu__link">Depoimentos</a></li>
+          <li class="menu__item"><a href="#contato" class="menu__link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="secao banner">
+      <div class="container colunas">
+        <div class="colunas__item">
+          <p class="banner__etiqueta">Design digital que gera resultado</p>
+          <h1 class="banner__titulo">Transformamos ideias em experiências digitais memoráveis</h1>
+          <p class="banner__texto">Criamos sites, identidades visuais e campanhas que conectam a sua marca às pessoas certas, em qualquer tela.</p>
+          <div class="banner__acoes">
+            <a href="#contato" class="botao">Fale com a gente</a>
+            <a href="#servicos" class="botao botao--contorno">Ver serviços</a>
+          </div>
+        </div>
+        <img
+          class="colunas__item imagem"
+          src="https://picsum.photos/id/180/960/720"
+          srcset="https://picsum.photos/id/180/480/360 480w,
+                  https://picsum.photos/id/180/960/720 960w,
+                  https://picsum.photos/id/180/1440/1080 1440w"
+          sizes="(min-width: 56em) 45vw, 100vw"
+          alt="Notebook aberto sobre a mesa, com um projeto de site na tela"
+          width="960" height="720">
+      </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section id="sobre" class="secao sobre">
+      <div class="container colunas">
+        <img
+          class="colunas__item imagem"
+          src="https://picsum.photos/id/60/960/720"
+          srcset="https://picsum.photos/id/60/480/360 480w,
+                  https://picsum.photos/id/60/960/720 960w,
+                  https://picsum.photos/id/60/1440/1080 1440w"
+          sizes="(min-width: 56em) 45vw, 100vw"
+          alt="Mesa de trabalho da equipe com computador e anotações"
+          loading="lazy" width="960" height="720">
+        <div class="colunas__item">
+          <h2 class="secao__titulo">Sobre Nós</h2>
+          <p class="sobre__texto">A Agência Criativa Web nasceu em 2015 com uma missão simples: unir estratégia, criatividade e tecnologia para fazer marcas crescerem no digital.</p>
+          <p class="sobre__texto">Somos um time de designers, desenvolvedores e estrategistas que trabalha lado a lado com cada cliente, do primeiro rascunho ao lançamento.</p>
+          <ul class="valores">
+            <li class="valores__item"><strong>Criatividade</strong> com propósito</li>
+            <li class="valores__item"><strong>Transparência</strong> em cada etapa</li>
+            <li class="valores__item"><strong>Resultado</strong> medido em números</li>
+          </ul>
+          <div class="numeros">
+            <div class="numeros__item"><strong class="numeros__valor">+120</strong><span class="numeros__rotulo">projetos entregues</span></div>
+            <div class="numeros__item"><strong class="numeros__valor">9</strong><span class="numeros__rotulo">anos de mercado</span></div>
+            <div class="numeros__item"><strong class="numeros__valor">98%</strong><span class="numeros__rotulo">clientes satisfeitos</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="secao secao--alternada secao--centralizada">
+      <div class="container">
+        <h2 class="secao__titulo">Serviços</h2>
+        <p class="secao__subtitulo">Tudo o que a sua marca precisa para crescer no digital.</p>
+        <div class="grade grade--3">
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">🖥️</span>
+            <h3 class="cartao__titulo">Criação de Sites</h3>
+            <p class="cartao__texto">Sites rápidos, responsivos e otimizados para aparecer no Google.</p>
+          </article>
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">🎨</span>
+            <h3 class="cartao__titulo">Identidade Visual</h3>
+            <p class="cartao__texto">Logotipo, paleta de cores e tipografia que traduzem a sua marca.</p>
+          </article>
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">📱</span>
+            <h3 class="cartao__titulo">Design de Apps</h3>
+            <p class="cartao__texto">Interfaces intuitivas para aplicativos iOS e Android.</p>
+          </article>
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">📈</span>
+            <h3 class="cartao__titulo">Marketing Digital</h3>
+            <p class="cartao__texto">Campanhas e conteúdo para redes sociais com foco em resultado.</p>
+          </article>
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">🛒</span>
+            <h3 class="cartao__titulo">Lojas Virtuais</h3>
+            <p class="cartao__texto">E-commerce completo, do catálogo ao pagamento.</p>
+          </article>
+          <article class="cartao">
+            <span class="cartao__icone" aria-hidden="true">🔍</span>
+            <h3 class="cartao__titulo">UX e Consultoria</h3>
+            <p class="cartao__texto">Pesquisa com usuários e testes para melhorar a experiência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="secao secao--centralizada">
+      <div class="container">
+        <h2 class="secao__titulo">Depoimentos</h2>
+        <p class="secao__subtitulo">O que nossos clientes dizem sobre nós.</p>
+        <div class="grade grade--3">
+          <blockquote class="depoimento">
+            <p class="depoimento__texto">“O novo site dobrou os pedidos de orçamento em três meses. Equipe atenciosa do começo ao fim.”</p>
+            <footer class="depoimento__autor"><span class="avatar" aria-hidden="true">MS</span><cite class="depoimento__nome">Mariana Souza, Doce Arte Confeitaria</cite></footer>
+          </blockquote>
+          <blockquote class="depoimento">
+            <p class="depoimento__texto">“A identidade visual ficou exatamente como imaginávamos. Hoje somos reconhecidos na cidade.”</p>
+            <footer class="depoimento__autor"><span class="avatar" aria-hidden="true">RL</span><cite class="depoimento__nome">Rafael Lima, Studio Fit</cite></footer>
+          </blockquote>
+          <blockquote class="depoimento">
+            <p class="depoimento__texto">“Profissionais, criativos e sempre no prazo. Recomendo de olhos fechados.”</p>
+            <footer class="depoimento__autor"><span class="avatar" aria-hidden="true">CA</span><cite class="depoimento__nome">Carla Alves, Alves Advocacia</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao secao--alternada">
+      <div class="container colunas colunas--topo">
+        <div class="colunas__item">
+          <h2 class="secao__titulo">Contato</h2>
+          <p>Vamos conversar sobre o seu próximo projeto?</p>
+          <address class="contato">
+            <p class="contato__linha">📍 Rua das Ideias, 123, Centro, São Paulo/SP</p>
+            <p class="contato__linha">📞 <a href="tel:+551140000000">(11) 4000-0000</a></p>
+            <p class="contato__linha">✉️ <a href="mailto:contato@agenciacriativaweb.com.br">contato@agenciacriativaweb.com.br</a></p>
+          </address>
+        </div>
+
+        <form class="colunas__item formulario" action="#" method="post">
+          <label class="formulario__rotulo" for="nome">Nome</label>
+          <input class="formulario__campo" type="text" id="nome" name="nome" required>
+
+          <label class="formulario__rotulo" for="email">E-mail</label>
+          <input class="formulario__campo" type="email" id="email" name="email" required>
+
+          <label class="formulario__rotulo" for="mensagem">Mensagem</label>
+          <textarea class="formulario__campo" id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit" class="botao formulario__botao">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <p>© 2026 Agência Criativa Web. Todos os direitos reservados.</p>
+      <a href="#home" class="rodape__link">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
