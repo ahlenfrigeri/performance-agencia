@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Agência Criativa Web: design digital, sites e identidade visual.">
   <title>Agência Criativa Web</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- OTIMIZAÇÃO: imagem principal (LCP) e fontes começam a baixar antes de tudo -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesrcset="img/trabalho-480.avif 480w, img/trabalho-960.avif 960w, img/trabalho-1440.avif 1440w"
+        imagesizes="(min-width: 56em) 45vw, 100vw">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- OTIMIZAÇÃO: fontes hospedadas no próprio site (antes vinham do Google Fonts,
+       uma folha de estilo externa que bloqueava a renderização).
+       font-display: swap mostra o texto na hora com a fonte reserva. -->
+  <style>
+    @font-face { font-family: "Poppins"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/poppins-400.woff2") format("woff2"); }
+    @font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/poppins-600.woff2") format("woff2"); }
+    @font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/poppins-700.woff2") format("woff2"); }
+  </style>
+
+  <!-- No build (npm run build) este <link> é trocado pelo CSS minificado direto no HTML -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -45,30 +61,46 @@
             <a href="#servicos" class="botao botao--contorno">Ver serviços</a>
           </div>
         </div>
-        <img
-          class="colunas__item imagem"
-          src="https://picsum.photos/id/180/960/720"
-          srcset="https://picsum.photos/id/180/480/360 480w,
-                  https://picsum.photos/id/180/960/720 960w,
-                  https://picsum.photos/id/180/1440/1080 1440w"
-          sizes="(min-width: 56em) 45vw, 100vw"
-          alt="Notebook aberto sobre a mesa, com um projeto de site na tela"
-          width="960" height="720">
+        <!-- OTIMIZAÇÃO: <picture> entrega AVIF (menor) ou WebP, com JPG como reserva.
+             Imagem local (antes vinha do picsum.photos com redirecionamento).
+             fetchpriority="high": é a maior imagem da primeira tela (LCP). -->
+        <picture class="colunas__item">
+          <source type="image/avif"
+                  srcset="img/trabalho-480.avif 480w, img/trabalho-960.avif 960w, img/trabalho-1440.avif 1440w"
+                  sizes="(min-width: 56em) 45vw, 100vw">
+          <source type="image/webp"
+                  srcset="img/trabalho-480.webp 480w, img/trabalho-960.webp 960w, img/trabalho-1440.webp 1440w"
+                  sizes="(min-width: 56em) 45vw, 100vw">
+          <img
+            class="imagem"
+            src="img/trabalho-960.jpg"
+            srcset="img/trabalho-480.jpg 480w, img/trabalho-960.jpg 960w, img/trabalho-1440.jpg 1440w"
+            sizes="(min-width: 56em) 45vw, 100vw"
+            alt="Notebook aberto sobre a mesa, com um projeto de site na tela"
+            width="960" height="720" fetchpriority="high" decoding="async">
+        </picture>
       </div>
     </section>
 
     <!-- SOBRE NÓS -->
     <section id="sobre" class="secao sobre">
       <div class="container colunas">
-        <img
-          class="colunas__item imagem"
-          src="https://picsum.photos/id/60/960/720"
-          srcset="https://picsum.photos/id/60/480/360 480w,
-                  https://picsum.photos/id/60/960/720 960w,
-                  https://picsum.photos/id/60/1440/1080 1440w"
-          sizes="(min-width: 56em) 45vw, 100vw"
-          alt="Mesa de trabalho da equipe com computador e anotações"
-          loading="lazy" width="960" height="720">
+        <!-- Fora da primeira tela: loading="lazy" só baixa quando a pessoa rolar até aqui -->
+        <picture class="colunas__item">
+          <source type="image/avif"
+                  srcset="img/equipe-480.avif 480w, img/equipe-960.avif 960w, img/equipe-1440.avif 1440w"
+                  sizes="(min-width: 56em) 45vw, 100vw">
+          <source type="image/webp"
+                  srcset="img/equipe-480.webp 480w, img/equipe-960.webp 960w, img/equipe-1440.webp 1440w"
+                  sizes="(min-width: 56em) 45vw, 100vw">
+          <img
+            class="imagem"
+            src="img/equipe-960.jpg"
+            srcset="img/equipe-480.jpg 480w, img/equipe-960.jpg 960w, img/equipe-1440.jpg 1440w"
+            sizes="(min-width: 56em) 45vw, 100vw"
+            alt="Mesa de trabalho da equipe com computador e anotações"
+            loading="lazy" decoding="async" width="960" height="720">
+        </picture>
         <div class="colunas__item">
           <h2 class="secao__titulo">Sobre Nós</h2>
           <p class="sobre__texto">A Agência Criativa Web nasceu em 2015 com uma missão simples: unir estratégia, criatividade e tecnologia para fazer marcas crescerem no digital.</p>

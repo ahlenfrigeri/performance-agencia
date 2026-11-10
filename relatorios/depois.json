@@ -1,0 +1,18 @@
+{
+  "rodadas": [
+    99,
+    100,
+    100
+  ],
+  "performance": 100,
+  "acessibilidade": 100,
+  "boasPraticas": 100,
+  "seo": 100,
+  "FCP": "1.1 s",
+  "LCP": "1.4 s",
+  "TBT": "10 ms",
+  "CLS": "0",
+  "SpeedIndex": "2.2 s",
+  "peso": "Total size was 77 KiB",
+  "requisicoes": 7
+}

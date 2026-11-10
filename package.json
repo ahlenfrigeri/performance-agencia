@@ -1,13 +1,17 @@
 {
-  "name": "agencia-criativa-web",
+  "name": "performance-agencia",
   "version": "1.0.0",
   "private": true,
-  "description": "Agência Criativa Web com SASS modular (exercício do módulo 13 - EBAC)",
+  "description": "Análise e otimização de performance da Agência Criativa Web (Módulo 32, EBAC Front-End)",
   "scripts": {
     "sass": "sass scss/estilos.scss css/estilos.css --no-source-map",
-    "sass:watch": "sass --watch scss/estilos.scss css/estilos.css --no-source-map"
+    "sass:watch": "sass --watch scss/estilos.scss css/estilos.css --no-source-map",
+    "imagens": "node scripts/otimizar-imagens.mjs",
+    "build": "npm run sass && node scripts/build.mjs"
   },
   "devDependencies": {
-    "sass": "1.106.1"
+    "html-minifier-terser": "^7.2.0",
+    "sass": "1.106.1",
+    "sharp": "^0.35.5"
   }
 }
